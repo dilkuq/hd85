@@ -1,0 +1,14 @@
+{
+    "name": "administrator/hd85",
+    "description": "this is a student project",
+    "type": "project",
+    "license": "mit",
+    "authors": [
+        {
+            "name": "rahmanjan",
+            "email": "1457484065@qq.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
