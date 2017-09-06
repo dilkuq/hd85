@@ -1,0 +1,14 @@
+{
+    "name": "dilkuq/hd85",
+    "description": "this is hd85 project",
+    "type": "project",
+    "license": "mit",
+    "authors": [
+        {
+            "name": "rahmanjan",
+            "email": "1457484065@qq.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
