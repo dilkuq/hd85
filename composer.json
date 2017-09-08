@@ -1,0 +1,28 @@
+{
+    "name": "dilkuq/hd85",
+    "description": "this is a student guanli xitong project",
+    "type": "project",
+    "license": "mit",
+    "authors": [
+        {
+            "name": "dilkuq",
+            "email": "1457484065@qq.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "gregwar/captcha": "dev-master"
+    },
+    "autoload":{
+        "psr-4":{
+            "app\\":"app/",
+            "core\\":"core/",
+            "system\\":"system"
+        },
+        "files":[
+            "system/functions.php",
+            "system/config/database.php"
+        ]
+    }
+
+}
