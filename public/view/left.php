@@ -4,7 +4,7 @@
 			manager
 		</a>
 		<a href="index.php?s=admin/grade/lists" class="list-group-item active ">grade</a>
-		<a href="" class="list-group-item ">student</a>
+		<a href="index.php?s=admin/student/lists" class="list-group-item ">student</a>
 		<a href="" class="list-group-item ">user</a>
 		<a href="" class="list-group-item ">attachment</a>
 	</div>

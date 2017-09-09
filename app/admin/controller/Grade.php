@@ -52,7 +52,6 @@ class Grade extends Common {
         //获取当前get参数中id所对应班级数据
         $id = $_GET['id'];
         $data = g::findArray($id);
-
         if($_POST){
             $data = g::where("gname = '{$_POST["gname"]}' and id != {$id}")->get();
             if($data){

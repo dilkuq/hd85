@@ -19,7 +19,7 @@
             <form action="" method="post" role="form" style="margin-top: 20px;">
 
                 <div class="form-group">
-                     <input type="text" class="form-control" name="gname" id="" placeholder="grade name" value="<?php echo $data['id'] ?>">
+                     <input type="text" class="form-control" name="gname" id="" placeholder="grade name" value="<?php echo $data['gname'] ?>">
                 </div>
                 <button type="submit" class="btn btn-primary">save</button>
             </form>
