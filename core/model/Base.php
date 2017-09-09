@@ -61,20 +61,20 @@ class Base{
     }
     //获取数组形式的单条数据
     public function findArray($pri){
-        $obj=$this->find($pri);
+        $obj = $this->find($pri);
         return $obj->shuju;
     }
 
-    public function getprikey(){
-        //需要使用desc 查看表结构
-        $sql="desc {$this->table}";
-        $result=self::$pdo->query($sql);
-        $data=$result->fetchAll(\PDO::FETCH_ASSOC);
-        $prikey='';
+    public function getPrikey(){
+        //需要使用 desc wish 查看表结构
+        $sql = "desc {$this->table}";
+        $result = self::$pdo->query($sql);
+        $data = $result->fetchAll(\PDO::FETCH_ASSOC);
+        $priKey = '';
         foreach ($data as $v){
-            if($v['key']=='PRI'){
-                $prikey=$v['Field'];
-                return $prikey;
+            if($v['Key'] == 'PRI'){
+                $priKey = $v['Field'];
+                return $priKey;
             }
         }
     }
@@ -87,6 +87,25 @@ class Base{
         $data=$result->fetchAll(\PDO::FETCH_ASSOC);
         return $data[0]["c"];
 
+    }
+    //执行有结果集的操作
+    public function query($sql){
+        try{
+            $result = self::$pdo->query($sql);
+            $data = $result->fetchAll(\PDO::FETCH_ASSOC);
+            return $data;
+        }catch (\PDOException $e){
+            die($e->getMessage());
+        }
+    }
+
+    //执行没有结果集的操作
+    public function exec($sql){
+        try{
+            return self::$pdo->exec($sql);
+        }catch (\PDOException $e){
+            die($e->getMessage());
+        }
     }
 
 }
