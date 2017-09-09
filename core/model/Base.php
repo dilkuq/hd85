@@ -47,23 +47,21 @@ class Base{
         $this->where="where {$where}";
         return $this;
     }
-    //获取单条数据  考虑一下,单条数据,代表着查找某个唯一字段
+    //获取单条数据 ，单条数据代表着查找某个唯一字段
     public function find($pri){
-//        先整理sql语句 select * from wish where 主键 = $pri
-        //第一步:获取当前表的主键名称
-        $priKey = $this->getPrikey();
-        //组合where
-        $this->where("{$priKey} = {$pri}");
+        //先整理sql语句 select * from student where 主键=$pri
+        //第一步：获取当前表的主键名称
+        $prikey=$this->getprikey();
         //组合sql
-        $sql = "select * from {$this->table} {$this->where}";
-        $result = self::$pdo->query($sql);
-        $data = $result->fetch(\PDO::FETCH_ASSOC);
-        $this->shuju = $data;
+        $sql="select * from {$this->table} {$this->where}";
+        $result=self::$pdo->query($sql);
+        $data=$result->fetch(\PDO::FETCH_ASSOC);
+        $this->shuju=$data;
         return $this;
     }
     //获取数组形式的单条数据
     public function findArray($pri){
-        $obj = $this->find($pri);
+        $obj=$this->find($pri);
         return $obj->shuju;
     }
 

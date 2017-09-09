@@ -39,7 +39,7 @@ class Student extends Common{
             if($data){
                 return $this->message('该班级名称已存在!');
             }
-            $sql = "update student set name='{$_POST["name"]}','{$_POST[\"sex\"]}','{$_POST[\"grade\"]}','{$_POST[\"birthday\"]}','{$_POST[\"introduction\"]}',  where id = {$id}";
+
             $result = stu::exec($sql);
             return $this->setRedirect('index.php?s=admin/grade/lists')->message('修改班级数据成功');
         }
